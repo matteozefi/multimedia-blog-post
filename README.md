@@ -1,2 +1,2 @@
-# multimedia-blog-post
-A multimedia blog post about my experience with the Kingdom Hearts series
+# Multimedia Blog Post
+A multimedia blog post detailing my experience about the Kingdom Hearts franchise that features responsive design, embedded video content, and modern CSS techniques
