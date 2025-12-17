@@ -26,5 +26,8 @@ A multimedia blog post detailing my experience about the Kingdom Hearts franchis
 2. Open 'index.html' in your browser (or via liveserver if you have VSCode)
 3. Enjoy the post!
 
+## Live Demo
+https://matteozefi.github.io/multimedia-blog-post/
+
 
 
