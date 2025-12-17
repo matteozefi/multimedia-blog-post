@@ -16,7 +16,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/kh-web-background.webp);
+    background-image: url(images/kh-web-background.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -311,3 +311,4 @@ body {
         height: 35vh;
     }
 }
+
