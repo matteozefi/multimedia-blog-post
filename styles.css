@@ -1,4 +1,3 @@
-/* FIXED reset (your "*, ::before, ::after" is invalid as a selector list) */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -9,7 +8,6 @@ html, body {
   height: 100%;
 }
 
-/* IMPORTANT: create a stacking context so the -1 layer stays behind your content, not behind <html> */
 body {
   min-height: 100vh;
   display: flex;
@@ -19,7 +17,6 @@ body {
   z-index: 0;
 }
 
-/* Background blur effect */
 body::before {
   content: "";
   position: fixed;
@@ -28,7 +25,6 @@ body::before {
   background: url("./images/kh-web-background.webp") center / cover no-repeat;
   filter: blur(5px);
 
-  /* prevents blur from showing white edges */
   transform: scale(1.05);
 
   z-index: -1;
@@ -316,5 +312,6 @@ body::before {
         height: 35vh;
     }
 }
+
 
 
