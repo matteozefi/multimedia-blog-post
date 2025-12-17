@@ -21,5 +21,10 @@ A multimedia blog post detailing my experience about the Kingdom Hearts franchis
 - CSS3
 - Google Fonts API
 
+## Installation
+1. Clone the repository
+2. Open 'index.html' in your browser (or via liveserver if you have VSCode)
+3. Enjoy the post!
+
 
 
