@@ -33,14 +33,27 @@ Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montagu+Slab:opsz,wght@16..1
             </ul>
         </nav>
     </header>
+
     <main id="main-content">
+
         <section id="intro-video">
             <h2 class="h2-titles" id="intro-video-title">Kingdom Hearts III Opening Movie</h2>
+
             <div id="vid-group">
-                <iframe id="video" width="1000" height="650" src="https://www.youtube.com/embed/2VawSnaxtSI?si=8fE5Ere6z-Kjft9O" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- ✅ CHANGE: Responsive wrapper so video scales on mobile -->
+                <div class="video-wrap">
+                    <iframe 
+                        id="video"
+                        src="https://www.youtube.com/embed/2VawSnaxtSI?si=8fE5Ere6z-Kjft9O" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
+
             <h3 id="explanation-title">Broadening Horizons</h3>
             <div id="vid-cap-group">           
                 <p id="video-explanation" class="text-overlay">This trailer revealed the very game which many diehard fans had considered
@@ -57,12 +70,16 @@ Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montagu+Slab:opsz,wght@16..1
                 </p>
             </div>
         </section>
+
         <hr class="rule">
+
         <section id="synopsis">
             <img id="synopsis-img1" src="images/sora_chainofmemories_webimage.png" alt="Image of Sora">
             <img id="synopsis-img2" src="images/kh1_webimage.png" alt ="Image of Roxas">
+
             <div id="synopsis-main">
                 <h2 class="h2-titles">Kingdom Hearts Synopsis</h2>
+
                 <div id="synopsis-body">
                     <h3>Hero of Light</h3>
                     <p class="text-overlay">Kingdom Hearts is a story about a boy named Sora who grew up in a far-off
@@ -78,6 +95,7 @@ Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montagu+Slab:opsz,wght@16..1
                     wielder of the keyblade. From there the trio undertake a multi-world encompassing adventure
                     to find Sora's friends and stop the unrelenting Heartless.
                     </p>
+
                     <h3>Dark Curiosity</h3>
                     <p class="text-overlay">Before his unknown arrival to Traverse Town, Sora had a heart-wrenching confrontation with
                         the very source of this sudden attack. Riku, Sora's best friend, had willingly accepted
@@ -94,7 +112,9 @@ Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montagu+Slab:opsz,wght@16..1
                 </div>
             </div>
         </section>
+
         <hr class="rule">
+
         <section id="my-experience">
             <h2 class="h2-titles">My Experience With Kingdom Hearts</h2>
             <img id="my-image" src="images/sora_smiling_webimage.jpeg" alt="Picture of Sora smiling">
@@ -123,7 +143,9 @@ Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montagu+Slab:opsz,wght@16..1
                 </p>
             </div>
         </section>
+
     </main>
+
     <footer id="footer">
         <p id="author-tag">Created by Matteo Zefi | &copy</p>
         <img id="footer-img" src="images/Kingdom_Hearts_logo.svg.png" alt="Kingdom Hearts Logo">
@@ -136,5 +158,6 @@ Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montagu+Slab:opsz,wght@16..1
         </nav>
     </footer>
 </body>
-
 </html>
+
+
