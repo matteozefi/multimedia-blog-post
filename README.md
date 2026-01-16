@@ -7,7 +7,7 @@ A multimedia blog post detailing my experience about the Kingdom Hearts franchis
 <img width="2541" height="1293" alt="image" src="https://github.com/user-attachments/assets/b0327142-7ebb-4186-9eda-aea670465a32" />
 
 ## Preface
-This Web app was built primarily for desktop viewing as while it can be viewed and access on other devices be prepared for some degree of visual variance between varying viewports
+This web app was built primarily for desktop viewing as while it can be viewed and access on other devices be prepared for some degree of visual variance between varying viewports
 
 ## Features
 - Fixed navigation header with smooth scrolling
