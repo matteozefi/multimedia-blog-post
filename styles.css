@@ -16,7 +16,7 @@ body {
   position: relative;
   z-index: 0;
 
-  /* ✅ Helps prevent random sideways scrolling on mobile */
+  /* Helps prevent random sideways scrolling on mobile */
   overflow-x: hidden;
 }
 
@@ -35,100 +35,105 @@ body::before {
 }
 
 #main-content {
-    width: 100vw;
-    position: relative;
-    padding-top: 15vh;
-    flex: 1;
+  width: 100vw;
+  position: relative;
+  padding-top: 15vh;
+  flex: 1;
 }
 
 /* Header & Footer - consolidated shared styles */
 #header,
 #footer {
-    height: 15vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 15vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #header {
-    background-color: white;
-    border-bottom: 1px solid black;
-    position: fixed;
-    top: 0;
-    z-index: 1;
+  background-color: white;
+  border-bottom: 1px solid black;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
+/* ✅ UPDATED FOOTER (min-height + padding for better vertical spacing) */
 #footer {
-    background-color: black;
-    border-top: 1px solid white;
+  background-color: black;
+  border-top: 1px solid white;
+
+  min-height: 15vh;
+  height: auto;
+  padding: 1.5rem 0;
 }
 
 /* Navigation lists - consolidated shared styles */
 #nav-list,
 #footer-nav-list {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin-right: 2.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-right: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
 }
 
 #nav-list li a,
 #footer-nav-list li a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 #footer-nav-list li a {
-    color: white;
+  color: white;
 }
 
 #main-title {
-    font-family: "Montagu Slab", serif;
-    font-size: 3rem;
+  font-family: "Montagu Slab", serif;
+  font-size: 3rem;
 }
 
 #title-cap {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-    margin-top: 7px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 7px;
 }
 
 #title-group {
-    margin-left: 2.5rem;
+  margin-left: 2.5rem;
 }
 
 /* Header and footer images - consolidated */
 #header-img,
 #footer-img {
-    height: 10vh;
-    margin: 0 auto;
+  height: 10vh;
+  margin: 0 auto;
 }
 
 /* Main sections */
 #intro-video {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 
 .h2-titles {
-    margin: 3rem auto 1rem auto;
-    font-size: 2.75rem;
-    font-family: "Josefin Sans", sans-serif;
-    color: white;
-    text-shadow: 3px 1px 10px black;
-    text-align: center;
+  margin: 3rem auto 1rem auto;
+  font-size: 2.75rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  text-shadow: 3px 1px 10px black;
+  text-align: center;
 }
 
 #intro-video-title {
-    margin-bottom: -1rem;
+  margin-bottom: -1rem;
 }
 
-/* ✅ CHANGE: Responsive video wrapper (keeps desktop look but scales for mobile) */
+/* Responsive video wrapper */
 .video-wrap {
   width: min(1000px, 92vw);
   aspect-ratio: 16 / 9;
@@ -145,123 +150,119 @@ body::before {
 }
 
 #explanation-title {
-    font-size: 2.5rem;
-    color: white;
-    text-shadow: 3px 1px 10px black;
-    margin-top: 2rem;
-    font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 3px 1px 10px black;
+  margin-top: 2rem;
+  font-family: "Oswald", sans-serif;
 }
 
 /* Text styling - consolidated white text properties */
 #video-explanation,
 #synopsis-body p,
 #my-experience-text {
-    color: white;
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 5px black;
-    font-family: "Montserrat", sans-serif;
-    line-height: 1.5;
+  color: white;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 5px black;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
 }
 
 #video-explanation {
-    width: 70%;
-    text-align: center;
-    margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 #synopsis-body p {
-    width: 80%;
-    margin: 0 auto 1rem auto;
-    text-align: center;
+  width: 80%;
+  margin: 0 auto 1rem auto;
+  text-align: center;
 }
 
 #my-experience-text {
-    text-align: center;
+  text-align: center;
 }
 
 .text-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1.5rem;
-    border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  border-radius: 8px;
 }
 
 .rule {
-    width: 95%;
-    margin: 3rem auto;
-    border: 2px solid white;
+  width: 95%;
+  margin: 3rem auto;
+  border: 2px solid white;
 }
 
 /* Synopsis section */
 #synopsis {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-areas: 'image-1 main-content image-2';
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "image-1 main-content image-2";
+  gap: 2rem;
 }
 
 #synopsis-img1 {
-    grid-area: image-1;
+  grid-area: image-1;
 }
 
 #synopsis-img2 {
-    grid-area: image-2;
+  grid-area: image-2;
 }
 
 #synopsis-img1,
 #synopsis-img2 {
-    box-shadow: 0 4px 24px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  box-shadow: 0 4px 24px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #synopsis-main {
-    display: flex;
-    flex-direction: column;
-    grid-area: main-content;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: main-content;
+  align-items: center;
 }
 
 #synopsis-body h3 {
-    margin: 0 auto 1rem auto;
-    font-size: 2rem;
-    color: white;
-    font-family: 'Oswald', sans-serif;
-    text-shadow: 2px 1px 5px black;
-    text-align: center;
+  margin: 0 auto 1rem auto;
+  font-size: 2rem;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  text-shadow: 2px 1px 5px black;
+  text-align: center;
 }
 
 /* My Experience section */
 #my-experience {
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 0 2rem 3rem 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem 3rem 2rem;
 }
 
 #my-image {
-    width: 20vw;
-    height: 40vh;
-    object-fit: cover;
-    border: 4px solid white;
-    float: right;
-    margin: 0 0 1rem 1rem;
-    shape-outside: margin-box;
+  width: 20vw;
+  height: 40vh;
+  object-fit: cover;
+  border: 4px solid white;
+  float: right;
+  margin: 0 0 1rem 1rem;
+  shape-outside: margin-box;
 }
 
 /* Author tag */
 #author-tag {
-    color: white;
-    margin-left: 2.5rem;
-    font-size: 1.5rem;
-    font-family: "Raleway", sans-serif;
-    margin-right: 16rem;
+  color: white;
+  margin-left: 2.5rem;
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+  margin-right: 16rem;
 }
 
-/* =======================================================
-   RESPONSIVE UPGRADES (Better Mobile + Tablet Support)
-   ======================================================= */
-
-/* ✅ These keep the typography scaling naturally */
+/* Typography scaling */
 #main-title {
   font-size: clamp(1.8rem, 4vw, 3rem);
 }
@@ -280,9 +281,7 @@ body::before {
   font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
-/* -------------------------------------------------------
-   Tablets (<= 1024px)
--------------------------------------------------------- */
+/* Tablets (<= 1024px) */
 @media (max-width: 1024px) {
   #header,
   #footer {
@@ -321,12 +320,8 @@ body::before {
   }
 }
 
-/* -------------------------------------------------------
-   Phones (<= 768px)
--------------------------------------------------------- */
+/* Phones (<= 768px) */
 @media (max-width: 768px) {
-
-  /* ✅ Header becomes stacked and NOT fixed (major UX upgrade) */
   #header {
     position: relative;
     height: auto;
@@ -335,7 +330,6 @@ body::before {
     padding: 1rem 0.75rem;
   }
 
-  /* ✅ Main content no longer needs huge padding top */
   #main-content {
     padding-top: 1rem;
   }
@@ -349,7 +343,6 @@ body::before {
     height: 60px;
   }
 
-  /* ✅ Nav wraps nicely instead of shrinking */
   #nav-list {
     flex-wrap: wrap;
     justify-content: center;
@@ -390,7 +383,6 @@ body::before {
     padding: 0 1rem 2rem 1rem;
   }
 
-  /* Footer becomes stacked */
   #footer {
     flex-direction: column;
     height: auto;
@@ -417,9 +409,7 @@ body::before {
   }
 }
 
-/* -------------------------------------------------------
-   Small Phones (<= 480px)
--------------------------------------------------------- */
+/* Small Phones (<= 480px) */
 @media (max-width: 480px) {
   #main-title {
     line-height: 1.1;
@@ -444,6 +434,8 @@ body::before {
     line-height: 1.4;
   }
 }
+
+
 
 
 
