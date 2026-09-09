@@ -4,442 +4,204 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
+:root {
+  --gutter: clamp(1rem, 1.6vw, 2.5rem);
+  --section-space: clamp(1.5rem, 1.9vw, 3rem);
 }
 
+html { min-height: 100%; }
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   position: relative;
-  z-index: 0;
+  isolation: isolate;
+  background: #23180f;
+  font-family: "Montserrat", sans-serif;
 }
-
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
-
+  inset: -10px;
   background: url("./images/kh-web-background.webp") center / cover no-repeat;
   filter: blur(5px);
-
-  transform: scale(1.05);
-
   z-index: -1;
   pointer-events: none;
 }
 
-#main-content {
-    width: 100vw;
-    position: relative;
-    padding-top: 15vh;
-    flex: 1;
-}
-
-/* Header & Footer - consolidated shared styles */
-#header {
-    height: 15vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#footer {
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#header {
-    background-color: white;
-    border-bottom: 1px solid black;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-}
-
-#footer {
-    background-color: black;
-    border-top: 1px solid white;
-    min-height: 15vh;
-    height: auto;
-    padding: 2.5rem 0;
-}
-
-/* Navigation lists - consolidated shared styles */
-#nav-list,
-#footer-nav-list {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin-right: 2.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-}
-
-#nav-list li a,
-#footer-nav-list li a {
-    text-decoration: none;
-    color: black;
-}
-
-#footer-nav-list li a {
-    color: white;
-}
-
-#main-title {
-    font-family: "Montagu Slab", serif;
-    font-size: 3rem;
-}
-
-#title-cap {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-    margin-top: 7px;
-}
-
-#title-group {
-    margin-left: 2.5rem;
-}
-
-/* Header and footer images - consolidated */
-#header-img,
-#footer-img {
-    height: 10vh;
-    margin: 0 auto;
-}
-
-/* Main sections */
-#intro-video {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-}
-
-.h2-titles {
-    margin: 3rem auto 1rem auto;
-    font-size: 2.75rem;
-    font-family: "Josefin Sans", sans-serif;
-    color: white;
-    text-shadow: 3px 1px 10px black;
-    text-align: center;
-}
-
-#intro-video-title {
-    margin-bottom: -1rem;
-}
-
-/* Responsive video wrapper */
-.video-wrap {
-  width: min(1000px, 92vw);
-  aspect-ratio: 16 / 9;
-  border: 4px solid white;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 2rem;
-}
-
-#video {
+/* Sticky positioning reserves the header's actual height in the page. */
+#header, #footer {
   width: 100%;
-  height: 100%;
-  border: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem var(--gutter);
 }
-
-#explanation-title {
-    font-size: 2.5rem;
-    color: white;
-    text-shadow: 3px 1px 10px black;
-    margin-top: 2rem;
-    font-family: "Oswald", sans-serif;
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  border-bottom: 1px solid black;
 }
-
-/* Text styling - consolidated white text properties */
-#video-explanation,
-#synopsis-body p,
-#my-experience-text {
-    color: white;
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 5px black;
-    font-family: "Montserrat", sans-serif;
-    line-height: 1.5;
-}
-
-#video-explanation {
-    width: 70%;
-    text-align: center;
-    margin: 0 auto;
-}
-
-#synopsis-body p {
-    width: 80%;
-    margin: 0 auto 1rem auto;
-    text-align: center;
-}
-
-#my-experience-text {
-    text-align: center;
-}
-
-.text-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1.5rem;
-    border-radius: 8px;
-}
-
-.rule {
-    width: 95%;
-    margin: 3rem auto;
-    border: 2px solid white;
-}
-
-/* Synopsis section */
-#synopsis {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-areas: 'image-1 main-content image-2';
-    gap: 2rem;
-}
-
-#synopsis-img1 {
-    grid-area: image-1;
-}
-
-#synopsis-img2 {
-    grid-area: image-2;
-}
-
-#synopsis-img1,
-#synopsis-img2 {
-    box-shadow: 0 4px 24px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#synopsis-main {
-    display: flex;
-    flex-direction: column;
-    grid-area: main-content;
-    align-items: center;
-}
-
-#synopsis-body h3 {
-    margin: 0 auto 1rem auto;
-    font-size: 2rem;
-    color: white;
-    font-family: 'Oswald', sans-serif;
-    text-shadow: 2px 1px 5px black;
-    text-align: center;
-}
-
-/* My Experience section */
-#my-experience {
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 0 2rem 3rem 2rem;
-}
-
-#my-image {
-    width: 20vw;
-    height: 40vh;
-    object-fit: cover;
-    border: 4px solid white;
-    float: right;
-    margin: 0 0 1rem 1rem;
-    shape-outside: margin-box;
-}
-
-/* Author tag */
-#author-tag {
-    color: white;
-    margin-left: 2.5rem;
-    font-size: 1.5rem;
-    font-family: "Raleway", sans-serif;
-    margin-right: 16rem;
-}
-
-/* =======================================================
-   RESPONSIVE UPGRADES (Better Mobile + Tablet Support)
-   ======================================================= */
-
-/* These keep the typography scaling naturally */
 #main-title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-family: "Montagu Slab", serif;
+  font-size: clamp(1.65rem, 1.9vw, 3rem);
+  line-height: 1.25;
 }
+#title-cap {
+  font-size: clamp(1rem, .95vw, 1.5rem);
+  margin-top: .35rem;
+  line-height: 1.4;
+}
+#header-img, #footer-img {
+  display: block;
+  height: clamp(4rem, 5.1vw, 8rem);
+  width: auto;
+}
+#header-icon { justify-self: center; }
+#nav-bar, #footer nav { justify-self: end; }
+#nav-list, #footer-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .75rem clamp(.75rem, 1.3vw, 2rem);
+  list-style: none;
+  font-size: clamp(1rem, .95vw, 1.5rem);
+}
+#nav-list a, #footer-nav-list a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  padding-block: .4rem;
+}
+#nav-list a:hover, #footer-nav-list a:hover { text-decoration: underline; }
+a:focus-visible { outline: 3px solid #b80000; outline-offset: 4px; }
 
+#main-content { width: 100%; min-width: 0; flex: 1; }
+section { scroll-margin-top: 12rem; }
 .h2-titles {
-  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  margin: var(--section-space) auto 1rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(1.6rem, 1.75vw, 2.75rem);
+  line-height: 1.2;
+  color: white;
+  text-shadow: 3px 1px 10px black;
+  text-align: center;
 }
-
+#intro-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--section-space);
+  padding-inline: var(--gutter);
+}
+#intro-video-title { margin-bottom: 0; }
+#vid-group { width: min(40vw, 62.5rem); max-width: 100%; }
+.video-wrap {
+  width: 100%;
+  aspect-ratio: 20 / 13;
+  border: 3px solid white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: clamp(.5rem, 1.4vw, 2rem);
+}
+#video { display: block; width: 100%; height: 100%; border: 0; }
 #explanation-title {
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  margin-top: clamp(.5rem, 1.6vw, 2rem);
+  font: 700 clamp(1.5rem, 1.6vw, 2.5rem) / 1.3 "Oswald", sans-serif;
+  color: white;
+  text-shadow: 3px 1px 10px black;
+  text-align: center;
+}
+#vid-cap-group { width: min(72%, 112rem); }
+#video-explanation, #synopsis-body p, #my-experience-text {
+  color: white;
+  font-size: clamp(1rem, .85vw, 1.3rem);
+  line-height: 1.5;
+  text-shadow: 1px 1px 5px black;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+.text-overlay {
+  background: rgb(0 0 0 / 60%);
+  padding: clamp(1rem, 1.2vw, 1.5rem);
+  border-radius: 8px;
+}
+.rule { width: 95%; margin: var(--section-space) auto; border: 1px solid white; }
+
+#synopsis {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-areas: "image-1 main-content image-2";
+  gap: clamp(1rem, 1.3vw, 2rem);
+  align-items: start;
+}
+#synopsis-img1 { grid-area: image-1; }
+#synopsis-img2 { grid-area: image-2; }
+#synopsis-img1, #synopsis-img2 {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 45%);
+}
+#synopsis-main { grid-area: main-content; min-width: 0; }
+#synopsis-body p { width: 80%; margin: 0 auto 1rem; }
+#synopsis-body h3 {
+  margin-bottom: 1rem;
+  font: 700 clamp(1.35rem, 1.3vw, 2rem) / 1.3 "Oswald", sans-serif;
+  color: white;
+  text-shadow: 2px 1px 5px black;
+  text-align: center;
 }
 
-#video-explanation,
-#synopsis-body p,
-#my-experience-text {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+#my-experience {
+  width: min(48%, 76rem);
+  margin-inline: auto;
+  padding-bottom: var(--section-space);
+}
+#my-experience-text { display: flow-root; }
+#my-image {
+  width: 42%;
+  height: auto;
+  float: right;
+  border: 3px solid white;
+  margin: 0 0 1rem 1rem;
+}
+#footer { background: black; color: white; border-top: 1px solid white; }
+#footer-img { justify-self: center; }
+#author-tag { font: clamp(1rem, .95vw, 1.5rem) / 1.5 "Raleway", sans-serif; }
+
+@media (max-width: 1100px) {
+  #header, #footer { grid-template-columns: minmax(0, 1fr) auto; }
+  #header-icon, #footer-img { grid-column: 2; grid-row: 1; }
+  #nav-bar, #footer nav { grid-column: 1 / -1; justify-self: center; }
+  #nav-list, #footer-nav-list { justify-content: center; }
+  section { scroll-margin-top: 15rem; }
+  #vid-group { width: min(80%, 46rem); }
+  .video-wrap { aspect-ratio: 16 / 9; }
+  #vid-cap-group { width: min(100%, 60rem); }
+  #synopsis { grid-template-columns: 1fr; grid-template-areas: "main-content"; padding-inline: var(--gutter); }
+  #synopsis-img1, #synopsis-img2 { display: none; }
+  #synopsis-body { max-width: 48rem; margin-inline: auto; }
+  #synopsis-body p { width: 100%; }
+  #my-experience { width: min(90%, 60rem); }
 }
 
-/* Tablets (<= 1024px) */
-@media (max-width: 1024px) {
-  #header,
-  #footer {
-    padding: 0 1rem;
-  }
-
-  #nav-list,
-  #footer-nav-list {
-    gap: 1rem;
-    font-size: 1.1rem;
-    margin-right: 1rem;
-  }
-
-  #synopsis {
-    grid-template-columns: 1fr;
-    grid-template-areas: "main-content";
-    padding: 0 1.5rem;
-  }
-
-  #synopsis-img1,
-  #synopsis-img2 {
-    display: none;
-  }
-
-  #my-image {
-    width: min(320px, 80vw);
-    height: auto;
-    float: none;
-    display: block;
-    margin: 1.5rem auto;
-    border-radius: 10px;
-  }
-
-  #my-experience-text {
-    text-align: center;
-  }
+@media (max-width: 600px) {
+  #header { position: relative; }
+  #main-title { font-size: clamp(1.2rem, 5vw, 1.65rem); }
+  #title-cap { font-size: .9rem; }
+  #header-img, #footer-img { height: 3.5rem; }
+  #nav-list, #footer-nav-list { gap: .5rem 1rem; font-size: .95rem; }
+  section { scroll-margin-top: 1rem; }
+  #vid-group { width: 100%; }
+  #my-experience { width: 100%; padding-inline: var(--gutter); }
+  #my-image { float: none; display: block; width: min(100%, 20rem); margin: 0 auto 1rem; }
+  #footer { padding-block: 1.5rem; }
 }
 
-/* Phones (<= 768px) */
-@media (max-width: 768px) {
-  #header {
-    position: relative;
-    height: auto;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0.75rem;
-  }
-
-  #main-content {
-    padding-top: 1rem;
-  }
-
-  #title-group {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  #header-img {
-    height: 60px;
-  }
-
-  #nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 1rem;
-    gap: 1rem;
-    margin: 0;
-    padding-bottom: 0.5rem;
-  }
-
-  #intro-video {
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-
-  #video-explanation {
-    width: 100%;
-    padding: 0 0.25rem;
-  }
-
-  .text-overlay {
-    padding: 1rem;
-  }
-
-  .rule {
-    width: 92%;
-    margin: 2rem auto;
-  }
-
-  #synopsis-body p {
-    width: 100%;
-  }
-
-  #synopsis-main {
-    padding: 0 1rem;
-  }
-
-  #my-experience {
-    padding: 0 1rem 2rem 1rem;
-  }
-
-  #footer {
-    flex-direction: column;
-    height: auto;
-    gap: 1rem;
-    padding: 1.5rem 1rem calc(1.5rem + env(safe-area-inset-bottom));
-    text-align: center;
-  }
-
-  #author-tag {
-    margin: 0;
-    font-size: 1.1rem;
-  }
-
-  #footer-img {
-    height: 60px;
-    margin: 0 auto;
-  }
-
-  #footer-nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    font-size: 1rem;
-    margin: 0;
-  }
-}
-
-/* Small Phones (<= 480px) */
-@media (max-width: 480px) {
-  #main-title {
-    line-height: 1.1;
-  }
-
-  #title-cap {
-    font-size: 1rem;
-  }
-
-  #nav-list {
-    font-size: 0.95rem;
-  }
-
-  .text-overlay {
-    padding: 0.85rem;
-    border-radius: 6px;
-  }
-
-  #video-explanation,
-  #synopsis-body p,
-  #my-experience-text {
-    line-height: 1.4;
-  }
-}
 
 
 
