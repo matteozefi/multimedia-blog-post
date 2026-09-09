@@ -144,6 +144,9 @@ section { scroll-margin-top: 12rem; }
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 750 / 1332;
+  object-fit: cover;
+  object-position: center top;
   box-shadow: 0 4px 24px rgb(0 0 0 / 45%);
 }
 #synopsis-main { grid-area: main-content; min-width: 0; }
@@ -201,13 +204,6 @@ section { scroll-margin-top: 12rem; }
   #my-image { float: none; display: block; width: min(100%, 20rem); margin: 0 auto 1rem; }
   #footer { padding-block: 1.5rem; }
 }
-
-
-
-
-
-
-
 
 
 
