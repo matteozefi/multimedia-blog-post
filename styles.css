@@ -142,6 +142,7 @@ section { scroll-margin-top: 12rem; }
 #synopsis-img2 { grid-area: image-2; }
 #synopsis-img1, #synopsis-img2 {
   display: block;
+  align-self: center;
   width: 100%;
   height: auto;
   aspect-ratio: 750 / 1332;
@@ -204,8 +205,6 @@ section { scroll-margin-top: 12rem; }
   #my-image { float: none; display: block; width: min(100%, 20rem); margin: 0 auto 1rem; }
   #footer { padding-block: 1.5rem; }
 }
-
-
 
 
 
